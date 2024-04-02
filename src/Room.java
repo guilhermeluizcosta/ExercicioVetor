@@ -1,15 +1,18 @@
 public class Room {
-    
+
     private String name;
 	private String email;
-	private int room;
 	
 	
-	public Room(String name, String email, int room) {
+	public Room() {
+		
+	}
+
+
+	public Room(String name, String email) {
 		
 		this.name = name;
 		this.email = email;
-		this.room = room;
 	}
 
 
@@ -33,18 +36,7 @@ public class Room {
 	}
 
 
-	public int getRoom() {
-		return room;
-	}
-
-
-	public void setRoom(int room) {
-		this.room = room;
-	}
-	
 	public String toString() {
-		  
-		   return room + ": " + name  + ", " + email;
-		    }
-	
+		return name + ", " + email;
+	}
 }

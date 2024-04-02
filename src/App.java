@@ -1,33 +1,37 @@
+import java.util.Locale;
 import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-		Room[] quart = new Room[10];
-		int contador = 1;
-		System.out.println("How many rooms will be rented: ");
+      	Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		Room[] vect = new Room[10];
+		System.out.print("How many rooms will be rented?");
 		int n = sc.nextInt();
-		sc.nextLine();
-		
-		for (int i= 0; i<n;i++) {
-		System.out.println("Rent #"+ contador);
-		System.out.println("Name: ");
-		String name = sc.nextLine();
-		System.out.println("Email: ");
-		String email = sc.nextLine();
-		System.out.println("Room:");
-		int room = sc.nextInt();
-		sc.nextLine();
-		quart[i] = new Room(name,email,room);
-		contador++;
+       
+		for(int i = 1 ; i<=n; i++) {
+			System.out.println();
+			System.out.println("Rent #" + i + ":");
+			System.out.print("Name: ");
+			sc.nextLine();
+			String name = sc.nextLine();
+			System.out.print("Email: ");
+			String email = sc.next();
+			System.out.print("Room:");
+			int roomNumber = sc.nextInt();
+			vect[roomNumber] = new Room(name, email);
 		}
-		
+		System.out.println();
 		System.out.println("Busy rooms:");
-		
-		for (int i= 0; i<n;i++) {
+		for (int i = 0; i<10; i++) {
 			
-	     System.out.println(quart[i]);
+			if(vect[i]!= null) {
+				
+				System.out.println(i + ": " + vect[i]);
+			}
 		}
+     
 		sc.close();
+		
     }
 }
